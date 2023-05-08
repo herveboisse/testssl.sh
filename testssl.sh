@@ -943,7 +943,7 @@ is_ipv6addr() {
 
      [[ -z "$1" ]] && return 1
 
-     # Check that $1 contains an IPv4 address and nothing else
+     # Check that $1 contains an IPv6 address and nothing else
      [[ "$1" =~ $ipv6address ]] && [[ "$1" == $BASH_REMATCH ]] && \
           return 0 || \
           return 1
@@ -22241,7 +22241,7 @@ run_mx_all_ips() {
                determine_ip_addresses || continue
                if [[ $(count_words "$IPADDRs") -gt 1 ]]; then    # we have more than one ipv4 address to check
                     MULTIPLE_CHECKS=true
-                    pr_bold "Testing all IPv4 addresses (port $PORT): "; outln "$IPADDRs"
+                    pr_bold "Testing all IP addresses (port $PORT): "; outln "$IPADDRs"
                     for ip in $IPADDRs; do
                          NODEIP="$ip"
                          lets_roll "${STARTTLS_PROTOCOL}"
@@ -24121,7 +24121,7 @@ lets_roll() {
           determine_ip_addresses
           if [[ $(count_words "$IPADDRs") -gt 1 ]]; then    # we have more than one ipv4 address to check
                MULTIPLE_CHECKS=true
-               pr_bold "Testing all IPv4 addresses (port $PORT): "; outln "$IPADDRs"
+               pr_bold "Testing all IP addresses (port $PORT): "; outln "$IPADDRs"
                for ip in $IPADDRs; do
                     draw_line "-" $((TERM_WIDTH * 2 / 3))
                     outln
