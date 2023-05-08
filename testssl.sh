@@ -185,7 +185,7 @@ APPEND=${APPEND:-false}                 # append to csv/json/html/log file
 OVERWRITE=${OVERWRITE:-false}           # overwriting csv/json/html/log file
 [[ -z "$NODNS" ]] && declare NODNS      # If unset it does all DNS lookups per default. "min" only for hosts or "none" at all
 NXCONNECT=${NXCONNECT:-invalid.}        # For WSL this helps avoiding DNS requests to "invalid." which windows seem to handle delayed
-HAS_IPv6=${HAS_IPv6:-false}             # if you have OpenSSL with IPv6 support AND IPv6 networking set it to yes
+HAS_IPv6=${HAS_IPv6:-true}              # if you have OpenSSL with IPv6 support AND IPv6 networking set it to yes
 ALL_CLIENTS=${ALL_CLIENTS:-false}       # do you want to run all client simulation form all clients supplied by SSLlabs?
 OFFENSIVE=${OFFENSIVE:-true}            # do you want to include offensive vulnerability tests which may cause blocking by an IDS?
 ADDTL_CA_FILES="${ADDTL_CA_FILES:-""}"  # single file with a CA in PEM format or comma separated lists of them
