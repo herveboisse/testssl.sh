@@ -21305,7 +21305,7 @@ determine_ip_addresses() {
 
      ip4="$(get_a_record "$NODE")"
      ip6="$(get_aaaa_record "$NODE")"
-     IP46ADDRs=$(newline_to_spaces "$ip4 $ip6")
+     IP46ADDRs=$(newline_to_spaces "$ip6 $ip4")
 
      if [[ -n "$CMDLINE_IP" ]]; then
           # command line has supplied an IP address or "one"
@@ -21355,7 +21355,7 @@ determine_ip_addresses() {
                if is_ipv6addr "$CMDLINE_IP"; then
                     IPADDRs=$(newline_to_spaces "$ip6")
                else
-                    IPADDRs=$(newline_to_spaces "$ip4 $ip6")
+                    IPADDRs=$(newline_to_spaces "$ip6 $ip4")
                fi
           else
                IPADDRs=$(newline_to_spaces "$ip4")
