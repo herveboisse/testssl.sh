@@ -1116,7 +1116,7 @@ set_grade_cap() {
 
      # Always set special attributes. These are hard caps, due to name mismatch or cert being invalid
      if [[ "$1" == T || "$1" == M ]]; then
-          GRADE_CAP="$1"
+          : #GRADE_CAP="$1"
      # Only keep track of the lowest grade cap, since a higher grade cap won't do anything (F = lowest, A = highest)
      elif  [[ ! "$GRADE_CAP" > "$1" ]]; then
           GRADE_CAP="$1"
